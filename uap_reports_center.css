@@ -1,0 +1,228 @@
+/* =====================
+   uap_reports_center.css
+   Archivo CSS separado creado a partir del bloque <style> en el HTML.
+   Contiene variables, layout, responsive y estilos para toda la página.
+   ===================== */
+
+/* =====================
+   Variables de color
+   ===================== */
+:root{
+  --bg:#030415; /* espacio profundo */
+  --bg-2:#071233; /* azul profundo */
+  --accent:#4dd0e1; /* celeste brillante */
+  --muted:#9fb7c9; /* texto secundario */
+  --card:#07162a; /* tarjeta oscura */
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(77,208,225,0.06);
+  --success:#4caf50;
+  --warn:#ffb300;
+  --danger:#ff5252;
+  --border: rgba(255,255,255,0.06);
+}
+
+/* =====================
+   Reset y base
+   ===================== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(77,208,225,0.03), transparent),
+              radial-gradient(800px 400px at 90% 90%, rgba(77,208,225,0.02), transparent),
+              linear-gradient(180deg,var(--bg),var(--bg-2));
+  color:#e6f2ff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  padding-bottom:4rem; /* espacio para footer */
+}
+
+a{color:var(--accent);text-decoration:none}
+
+/* =====================
+   Contenedor principal
+   ===================== */
+.container{
+  width:min(1200px,94%);
+  margin:0 auto;
+}
+
+/* =====================
+   Header / Nav
+   ===================== */
+header{
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.nav-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.8rem 0;
+}
+.brand{
+  display:flex;align-items:center;gap:0.75rem;
+}
+/* Logo ficticio tipo parche */
+.logo{
+  width:56px;height:56px;border-radius:8px;
+  background:linear-gradient(135deg,#0b2540 0%,#07233a 60%);
+  box-shadow: 0 2px 10px rgba(3,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,0.06);
+}
+.logo svg{width:36px;height:36px}
+.agency-name{font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:0.6px;color:#d8f7ff}
+.nav{
+  display:flex;gap:1rem;align-items:center;
+}
+.nav a{
+  padding:0.6rem 0.85rem;border-radius:6px;color:var(--muted);font-weight:600;font-size:0.95rem;
+  transition:all 220ms cubic-bezier(.2,.9,.3,1);
+}
+.nav a:hover{background:var(--glass-2);color:var(--accent);transform:translateY(-2px)}
+
+/* CTA en header */
+.cta{
+  background:linear-gradient(90deg,var(--accent),#7be9ff);color:#041227;padding:0.5rem 0.9rem;border-radius:8px;font-weight:700;
+  box-shadow:0 6px 18px rgba(77,208,225,0.08);border:1px solid rgba(255,255,255,0.06);
+}
+
+/* =====================
+   Hero
+   ===================== */
+.hero{
+  min-height:56vh;display:grid;align-items:center;gap:1.5rem;padding:2.5rem 0 3rem;position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.hero::after{
+  /* overlays de estrellas sutiles */
+  content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 10% 10%, rgba(255,255,255,0.02) 1px, transparent 2px),
+  radial-gradient(circle at 80% 30%, rgba(255,255,255,0.015) 1px, transparent 2px);opacity:1;pointer-events:none;mix-blend-mode:screen
+}
+
+.hero-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;align-items:center}
+
+/* En pantallas amplias mostrar layout de dos columnas (texto + tarjeta) */
+@media (min-width:1000px){
+  .hero-grid{grid-template-columns:1fr 420px;gap:2rem}
+}
+.hero-text h1{
+  font-family:'Orbitron',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.8rem);margin:0 0 0.6rem;color:#e9fbff;text-shadow:0 6px 30px rgba(3,6,23,0.6);
+}
+.hero-text p{color:var(--muted);font-size:1.05rem;margin:0 0 1.2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{
+  padding:0.6rem 1rem;border-radius:8px;font-weight:700;border:1px solid rgba(255,255,255,0.04);cursor:pointer
+}
+.btn-outline{background:transparent;color:var(--accent);border:1px solid rgba(77,208,225,0.18)}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#7be9ff);color:#041227;box-shadow:0 10px 30px rgba(77,208,225,0.06)}
+
+/* Hero visual: tarjeta con imagen simulada */
+.hero-card{
+  background: linear-gradient(180deg, rgba(8,20,34,0.6), rgba(6,10,18,0.6));
+  border-radius:12px;padding:1rem;border:1px solid var(--border);height:100%;display:flex;flex-direction:column;gap:0.8rem;align-items:stretch;justify-content:center
+}
+.uap-visual{
+  position:relative;border-radius:12px;overflow:hidden;height:280px;background-color:#041023;display:flex;align-items:flex-end;justify-content:center;padding:0;color:var(--accent);
+}
+
+/* Imagen dentro de la tarjeta hero */
+.uap-visual .hero-img{
+  width:100%;height:100%;display:block;object-fit:cover;border-radius:12px;transition:transform 420ms cubic-bezier(.2,.9,.3,1);filter:brightness(0.96);
+}
+.uap-visual:hover .hero-img{transform:scale(1.035)}
+.uap-badge{background:linear-gradient(90deg, rgba(77,208,225,0.06), rgba(255,255,255,0.02));padding:0.4rem 0.6rem;border-radius:8px;font-weight:700}
+
+/* =====================
+   Estadísticas
+   ===================== */
+.stats{padding:2rem 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.stat-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--border);padding:1.1rem;border-radius:10px;display:flex;flex-direction:column;gap:0.6rem}
+.stat-card h3{margin:0;font-family:'Orbitron',sans-serif;color:#e9fbff}
+.stat-value{font-size:1.6rem;font-weight:700;color:var(--accent)}
+.stat-small{font-size:0.9rem;color:var(--muted)}
+
+/* =====================
+   Informes recientes
+   ===================== */
+.reports{padding:2rem 0}
+.reports-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.report-card{background:linear-gradient(180deg, rgba(2,10,20,0.4), rgba(5,12,22,0.4));border-radius:10px;padding:1rem;border:1px solid var(--border);display:flex;flex-direction:column;gap:0.6rem;transition:transform 240ms,box-shadow 240ms}
+.report-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(3,6,23,0.6)}
+.report-meta{display:flex;justify-content:space-between;gap:0.5rem;font-size:0.9rem;color:var(--muted)}
+.report-title{font-weight:700;color:#eafcff;font-family:'Orbitron',sans-serif}
+.report-tags{display:flex;gap:0.5rem;align-items:center}
+.pill{padding:0.25rem 0.5rem;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);font-size:0.8rem}
+.status-open{color:var(--warn);font-weight:700}
+.status-closed{color:var(--success);font-weight:700}
+.status-investigating{color:var(--accent);font-weight:700}
+
+/* =====================
+   Línea de tiempo
+   ===================== */
+.timeline{padding:2rem 0}
+.timeline-list{display:flex;flex-direction:column;gap:1rem}
+.timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1rem;align-items:start}
+.time-bubble{background:var(--card);border-radius:10px;padding:0.6rem 0.5rem;text-align:center;border:1px solid var(--border);font-weight:700}
+.event-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:0.8rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+.event-card h4{margin:0 0 0.25rem}
+.event-card p{margin:0;color:var(--muted);font-size:0.95rem}
+
+/* =====================
+   Galería de imágenes
+   ===================== */
+.gallery{padding:2rem 0}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem}
+.gallery-item{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--border);min-height:140px;display:flex;align-items:end}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;border-radius:10px;transition:transform 360ms cubic-bezier(.2,.9,.3,1)}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:0.6rem 0.8rem;background:linear-gradient(180deg, transparent, rgba(0,0,0,0.6));font-weight:700}
+
+/* Visualizaciones: imágenes de muestra en tarjetas */
+.visuals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.visual-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:1rem;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;gap:0.6rem}
+.visual-img{width:100%;height:160px;object-fit:cover;border-radius:10px;transition:transform 360ms cubic-bezier(.2,.9,.3,1);display:block}
+.visual-card:hover .visual-img{transform:scale(1.04)}
+
+/* =====================
+   Footer
+   ===================== */
+footer{border-top:1px solid var(--border);padding:2rem 0;background:linear-gradient(180deg,transparent,rgba(3,6,23,0.2));}
+.footer-grid{display:grid;grid-template-columns:1fr 220px;gap:2rem;align-items:start}
+.legal{color:var(--muted);font-size:0.95rem}
+.footer-links{display:flex;flex-direction:column;gap:0.5rem}
+
+/* =====================
+   Responsive
+   ===================== */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr 320px}
+  .reports-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:700px){
+  .nav{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-card{order:2}
+  .hero{padding:1.8rem 0}
+  .reports-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .logo{width:46px;height:46px}
+}
+
+/* small hover refinement for touch devices */
+@media (hover:none){
+  .report-card:hover{transform:none;box-shadow:none}
+}
