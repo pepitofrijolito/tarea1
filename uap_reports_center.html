@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Centro de Investigación de Fenómenos Aéreos No Identificados</title>
+  <meta name="description" content="UAP Reports Center — recopilación y análisis de reportes de objetos desconocidos en el cielo.">
+  <meta name="theme-color" content="#071428">
+  <meta name="keywords" content="UAP, UAP reports, investigación, avistamientos, radar, análisis, IA, datos">
+
+  <!-- Tipografía: uso de fuentes del sistema y fallback futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="uap_reports_center.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-row">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- SVG logo ficticio: órbita y sonda -->
+          <svg viewBox="0 0 64 64" fill="none" href="nasa.jpg" role="img" aria-label="Logo UAP Reports Center">
+            <circle cx="32" cy="32" r="30" stroke="#7be9ff" stroke-opacity="0.14" stroke-width="2" />
+            <path d="M16 48c8-6 20-6 32-24" stroke="#7be9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+            <circle cx="46" cy="18" r="4.5" fill="#7be9ff" opacity="0.16" />
+            <circle cx="44" cy="16" r="2" fill="#d8fbff" />
+          </svg>
+        </div>
+        <div>
+          <div class="agency-name">UAP Research Directorate</div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:2px">Centro Nacional de Investigaciones Aeroespaciales</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#">Inicio</a>
+        <a href="#reports">Informes</a>
+        <a href="#sightings">Avistamientos</a>
+        <a href="#database">Base de Datos</a>
+        <a href="#research">Investigación</a>
+        <a href="#ia">IA & Análisis</a>
+        <a href="#resources">Recursos</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+
+      <div style="display:flex;gap:0.6rem;align-items:center">
+        <a class="cta" href="#reports">Enviar Informe</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <aside class="hero-card" aria-hidden="true">
+          <div class="uap-visual">
+            <!-- Reemplazo de placeholder por imagen pública temática (espacio/UAP ficticio) -->
+            <img class="hero-img" loading="lazy" src="ovni2.jpg" alt="Visual espacial" />
+            <div style="display:flex;gap:0.6rem;align-items:center;justify-content:center;width:100%">
+              <div style="flex:1;text-align:left">
+                <div class="uap-badge">UAP-ARCHIVE • Nivel 3</div>
+                <div style="margin-top:0.6rem;color:var(--muted);font-size:0.95rem">Ejemplo visual de fenómeno aéreo no identificado. Imagen tomada de ejemplo público temático.</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0 0.2rem">
+            <div style="font-size:0.9rem;color:var(--muted)">Última verificación: 24 mayo 2026</div>
+            <div style="font-weight:700;color:var(--accent)">Evidencia: Vídeo & Fotografía</div>
+          </div>
+          <div style="margin-top:0.6rem;font-size:0.9rem;color:var(--muted)">Enlace rápido: <a href="#ia" style="color:var(--accent)">Análisis asistido por IA</a> · <a href="#resources" style="color:var(--accent)">Guías de recolección</a></div>
+        </aside>
+
+        <div class="hero-text">
+          <h1 id="hero-title">Centro de Investigación de Fenómenos Aéreos No Identificados</h1>
+          <p>Recopilamos y analizamos reportes de objetos desconocidos observados en el cielo. Nuestra misión es documentar, clasificar y aportar evidencia científica para determinar el origen y la naturaleza de cada incidente. Utilizamos técnicas modernas de visión por computador y modelos predictivos para priorizar casos y sugerir hipótesis.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#reports">Ver Informes</a>
+            <a class="btn btn-outline" href="#database">Acceder a la Base de Datos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="stats" aria-labelledby="stats-title">
+      <h2 id="stats-title" style="font-family:Orbitron, sans-serif;margin:0 0 1rem;color:#dff8ff">Estadísticas de investigación</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Casos investigados</h3>
+          <div class="stat-value">1,482</div>
+          <div class="stat-small">Desde el inicio del registro nacional</div>
+        </div>
+        <div class="stat-card">
+          <h3>Casos resueltos</h3>
+          <div class="stat-value">1,028</div>
+          <div class="stat-small">Confirmados como fenómenos naturales o aeronaves</div>
+        </div>
+        <div class="stat-card">
+          <h3>Casos pendientes</h3>
+          <div class="stat-value">326</div>
+          <div class="stat-small">En investigación activa</div>
+        </div>
+        <div class="stat-card">
+          <h3>Última actualización</h3>
+          <div class="stat-value">01 Jun 2026</div>
+          <div class="stat-small">Base de datos y reportes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IA & Análisis predictivo -->
+    <section id="ia" class="ai-portal" aria-labelledby="ia-title">
+      <h2 id="ia-title" style="font-family:Orbitron, sans-serif;margin:0 0 1rem;color:#dff8ff">IA & Análisis predictivo</h2>
+      <div class="ai-grid">
+        <div class="ai-card">
+          <h3>Resumen automático de casos</h3>
+          <p>Modelos de lenguaje y visión generan resúmenes ejecutivos de cada informe, extraen metadatos (coordenadas, hora, testigos) y proponen etiquetas de prioridad.</p>
+          <a href="#database" class="btn btn-sm">Explorar casos etiquetados</a>
+        </div>
+
+        <div class="ai-card">
+          <h3>Predicción de origen</h3>
+          <p>Redes entrenadas con datos históricos asignan una probabilidad (0–100%) a categorías: natural, aeronave conocida, fenómeno atmosférico, anómalo.</p>
+          <div class="prediction">Ejemplo: <strong>45% Anómalo · 40% Aeronave · 15% Natural</strong></div>
+        </div>
+
+        <div class="ai-card">
+          <h3>Recomendaciones operativas</h3>
+          <p>Sugerencias automáticas para equipos de campo: sensores recomendados, ventanas temporales de observación y rutas de vuelo seguras para verificación.</p>
+          <a href="#contact" class="btn btn-sm btn-outline">Solicitar equipo de verificación</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informes recientes -->
+    <section id="reports" class="reports" aria-labelledby="reports-title">
+      <h2 id="reports-title" style="font-family:Orbitron, sans-serif;margin:0 0 1rem;color:#dff8ff">Informes recientes</h2>
+      <div class="reports-grid">
+
+        <!-- Filtro rápido y enlaces -->
+        <div class="report-tools" style="grid-column:1/-1;display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap">
+          <label for="filter" style="color:var(--muted)">Filtrar por:</label>
+          <select id="filter" aria-label="Filtro de informes">
+            <option value="all">Todos</option>
+            <option value="high">Alta prioridad</option>
+            <option value="pending">Pendientes</option>
+            <option value="closed">Resueltos</option>
+          </select>
+          <a href="#reports" class="btn btn-sm">Exportar CSV</a>
+          <a href="#sightings" class="btn btn-sm btn-outline">Ir a galería</a>
+        </div>
+
+        <article class="report-card" aria-labelledby="r1">
+          <div class="report-meta">
+            <div>12 May 2026</div>
+            <div class="pill">Clasificación: Alto</div>
+          </div>
+          <h3 id="r1" class="report-title">Avistamiento nocturno sobre zona costera</h3>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div class="report-tags"><span style="color:var(--muted)">Ubicación:</span>&nbsp;<strong>Valparaíso, CL</strong></div>
+            <div class="status-investigating">En investigación</div>
+          </div>
+        </article>
+
+        <article class="report-card" aria-labelledby="r2">
+          <div class="report-meta">
+            <div>05 May 2026</div>
+            <div class="pill">Clasificación: Media</div>
+          </div>
+          <h3 id="r2" class="report-title">Objeto luminoso con patrón de movimiento inusual</h3>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div class="report-tags"><span style="color:var(--muted)">Ubicación:</span>&nbsp;<strong>Neuquén, AR</strong></div>
+            <div class="status-open">Pendiente</div>
+          </div>
+        </article>
+
+        <article class="report-card" aria-labelledby="r3">
+          <div class="report-meta">
+            <div>20 Apr 2026</div>
+            <div class="pill">Clasificación: Baja</div>
+          </div>
+          <h3 id="r3" class="report-title">Registro radar y testimonio de pilotos</h3>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div class="report-tags"><span style="color:var(--muted)">Ubicación:</span>&nbsp;<strong>Madrid, ES</strong></div>
+            <div class="status-closed">Resuelto</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Línea de tiempo -->
+    <section class="timeline" aria-labelledby="timeline-title">
+      <h2 id="timeline-title" style="font-family:Orbitron, sans-serif;margin:0 0 1rem;color:#dff8ff">Línea de tiempo - Eventos clave</h2>
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <div class="time-bubble">2017</div>
+          <div class="event-card">
+            <h4>Creación del registro nacional</h4>
+            <p>Establecimiento del sistema centralizado para recepción de reportes y normalización del formato de evidencia.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-bubble">2020</div>
+          <div class="event-card">
+            <h4>Primer informe de radar corroborado</h4>
+            <p>Sistema de radar detecta trazas no identificadas, análisis conjunto con fuerzas aéreas.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-bubble">2024</div>
+          <div class="event-card">
+            <h4>Publicación de protocolos de investigación</h4>
+            <p>Se publican protocolos estándar para colecta y verificación de evidencia.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Visualizaciones futuristas -->
+    <section id="visualizations" class="visuals" aria-labelledby="visualizations-title">
+      <h2 id="visualizations-title" style="font-family:Orbitron, sans-serif;margin:0 0 1rem;color:#dff8ff">Visualizaciones en tiempo simulado</h2>
+      <div class="visuals-grid">
+        <div class="visual-card">
+          <h4>Mapa de densidad</h4>
+          <p>Mapa interactivo de calor (imagen de ejemplo). En una implementación completa usa capas GIS con datos temporales.</p>
+          <img class="visual-img" loading="lazy" src="calor.jpg" alt="Mapa de densidad - ejemplo visual" />
+        </div>
+
+        <div class="visual-card">
+          <h4>Espectro de firmas</h4>
+          <p>Comparativa de firmas electromagnéticas y acústicas (imagen de ejemplo).</p>
+          <img class="visual-img" loading="lazy" src="comparación.jpg" alt="Espectro de firmas - ejemplo visual" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de imágenes -->
+    <section id="sightings" class="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" style="font-family:Orbitron, sans-serif;margin:0 0 1rem;color:#dff8ff">Imágenes destacadas</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img loading="lazy" src="ovni1.jpg" alt="Avistamiento 1"/>
+          <figcaption class="gallery-caption">Avistamiento - Puerto (fotografía)</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img loading="lazy" src="radar.jpg" alt="Avistamiento 2"/>
+          <figcaption class="gallery-caption">Registro radar (imagen procesada)</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img loading="lazy" src="piloto.jpg" alt="Avistamiento 3"/>
+          <figcaption class="gallery-caption">Evidencia - Testimonio piloto</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img loading="lazy" src="noche.jpg" alt="Avistamiento 4"/>
+          <figcaption class="gallery-caption">Secuencia nocturna (vídeo fotograma)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Recursos y guías -->
+    <section id="resources" class="resources" aria-labelledby="resources-title">
+      <h2 id="resources-title" style="font-family:Orbitron, sans-serif;margin:0 0 1rem;color:#dff8ff">Recursos y guías</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <h4>Guía de recolección de evidencia</h4>
+          <p>Formato sugerido para fotografías, vídeo, coordenadas GPS y testimonio. <a href="imagenes.html">Ver galería</a>.</p>
+        </div>
+        <div class="resource-card">
+          <h4>API de datos</h4>
+          <p>Endpoints públicos para investigadores: /api/v1/cases, /api/v1/sightings. <a href="informes.html">Documentación</a>.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Proyectos colaborativos</h4>
+          <p>Plataformas de ciencia ciudadana y repositorios de datos abiertos. <a href="login.html">Unirse</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.7rem">
+          <div class="logo" style="width:48px;height:48px"></div>
+          <div>
+            <div style="font-family:Orbitron, sans-serif;font-weight:700;color:#dff8ff">UAP Research Directorate</div>
+            <div style="color:var(--muted);font-size:0.9rem">Instituto Nacional de Investigación Aeroespacial</div>
+          </div>
+        </div>
+        <div class="legal">© 2026 UAP Research Directorate. Todos los derechos reservados. Uso institucional y científico. <br>Los reportes pueden contener información sensible; consulta la política de privacidad.</div>
+      </div>
+
+      <div>
+        <nav class="footer-links" aria-label="Enlaces institucionales">
+          <a href="#database">Base de Datos</a>
+          <a href="#research">Protocolos de Investigación</a>
+          <a href="#contact">Contacto</a>
+          <a href="#legal">Aviso legal</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

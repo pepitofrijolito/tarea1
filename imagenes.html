@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería Oficial de Evidencias Visuales</title>
+  <style>
+    /* Estética general: fondo espacial oscuro, tonos azul profundo, detalles celestes, estilo científico gubernamental */
+    :root{
+      --bg:#040812; /* casi negro espacial */
+      --deep-blue:#071430; /* azul profundo */
+      --accent:#36b0ff; /* celeste */
+      --muted:#9fb8d8;
+      --card:#071a2a;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --glass-border: rgba(54,176,255,0.12);
+      --glass-2-border: rgba(54,176,255,0.06);
+      font-synthesis: none;
+    }
+    html,body{height:100%;margin:0;font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;color:var(--muted);background: radial-gradient(ellipse at 10% 10%, rgba(54,176,255,0.035), transparent 10%), linear-gradient(180deg, var(--bg) 0%, #02040a 60%);}
+    /* Encabezado idéntico al del sitio principal */
+    header{background: linear-gradient(90deg, rgba(10,20,40,0.6), rgba(6,12,22,0.4));backdrop-filter: blur(6px);border-bottom:1px solid var(--glass-border);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--deep-blue),#06243a);display:flex;align-items:center;justify-content:center;border:1px solid var(--glass-border);box-shadow:0 4px 18px rgba(0,0,0,0.6) inset}
+    .logo strong{color:var(--accent);font-size:20px}
+    .site-title{font-size:18px;color:#dff4ff;font-weight:600}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:16px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:6px;border:1px solid transparent;font-weight:600}
+    nav a:hover{background:rgba(54,176,255,0.04);color:var(--accent);border-color:var(--glass-2-border)}
+    /* Hero */
+    .hero{padding:48px 32px;background:linear-gradient(180deg, rgba(8,20,32,0.2), transparent);display:flex;flex-direction:column;gap:12px}
+    .hero h1{margin:0;font-size:28px;color:#e6f8ff;letter-spacing:0.4px}
+    .hero p{margin:0;color:var(--muted);max-width:900px}
+    /* Contenedor */
+    .container{padding:28px 32px;max-width:1200px;margin:0 auto}
+    /* Filtros decorativos (simulan DB) */
+    .filters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+    .filter-chip{background:var(--glass);border:1px solid var(--glass-border);padding:8px 12px;border-radius:999px;color:var(--accent);font-weight:600;font-size:13px;display:inline-flex;align-items:center;gap:8px}
+    .decor-db{position:absolute;right:20px;top:26px;color:rgba(54,176,255,0.08);font-size:12px;transform:rotate(-8deg);letter-spacing:4px}
+    /* Grid de tarjetas */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,var(--card), rgba(7,26,42,0.6));padding:12px;border-radius:10px;border:1px solid var(--glass-2-border);box-shadow:0 6px 30px rgba(2,6,12,0.6)}
+  .thumb-wrap{position:relative;overflow:hidden;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+  .thumb{display:block;width:100%;height:200px;object-fit:cover;border-radius:10px;transition:transform 420ms cubic-bezier(.2,.9,.3,1);will-change:transform}
+  .thumb-wrap:hover .thumb{transform:scale(1.06)}
+    .meta{padding:10px 4px;display:flex;flex-direction:column;gap:6px}
+    .case-title{color:#e8fbff;font-weight:700;font-size:15px}
+    .case-data{font-size:13px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+    .status{padding:4px 8px;border-radius:999px;font-weight:700;font-size:12px}
+    .status.open{background:linear-gradient(90deg, rgba(54,176,255,0.08), rgba(54,176,255,0.03));color:var(--accent);border:1px solid rgba(54,176,255,0.08)}
+    .status.closed{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));color:#bcd6e8;border:1px solid rgba(255,255,255,0.02)}
+    /* Sección de desclasificados */
+    .declassified{margin-top:26px;padding:14px;border-radius:8px;background:linear-gradient(90deg, rgba(54,176,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(54,176,255,0.04)}
+    .declassified h3{margin:0 0 8px 0;color:#e6fbff}
+    /* Responsive */
+    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)} .thumb{height:180px}}
+    @media (max-width:640px){header{padding:12px 18px}.logo{width:48px;height:48px}.hero{padding:28px 18px}.container{padding:18px}.grid{grid-template-columns:1fr}.thumb{height:160px}}
+    /* Accents: líneas y iconografía sutil */
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(54,176,255,0.06),transparent);margin:18px 0;border-radius:2px}
+    /* Pequeños detalles 'científicos' */
+    .dataplate{font-family:monospace;background:linear-gradient(90deg,rgba(255,255,255,0.012),transparent);padding:6px 8px;border-radius:6px;font-size:12px;color:#bfe9ff}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><strong>UAP</strong></div>
+      <div>
+        <div class="site-title">Gal. Oficial de Evidencias Visuales</div>
+        <div class="dataplate">Unidad de Análisis de Fenómenos Aéreos</div>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="informes.html">Informes</a></li>
+        <li><a href="login.html">Acceso</a></li>
+      </ul>
+    </nav>
+    <div class="decor-db">ARCHIVO • UAP • 0047</div>
+  </header>
+  <section class="hero container">
+    <h1>Archivo Visual de Fenómenos Aéreos No Identificados</h1>
+    <p>Repositorio oficial de imágenes y evidencias gráficas catalogadas por la unidad. Los datos mostrados aquí son de ejemplo y las rutas son relativas para integrarse con el sitio principal.</p>
+  </section>
+  <main class="container">
+    <div class="filters">
+      <div class="filter-chip">Todas</div>
+      <div class="filter-chip">Desclasificadas</div>
+      <div class="filter-chip">Abiertas</div>
+      <div class="filter-chip">Cerradas</div>
+      <div class="filter-chip">2023</div>
+      <div class="filter-chip">2024</div>
+    </div>
+    <div class="divider"></div>
+    <section class="gallery">
+      <div class="grid">
+        <!-- tarjeta 1 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <img loading="lazy" class="thumb" src="lago.jpg" alt="Caso 001 - Luz sobre el lago">
+          </div>
+          <div class="meta">
+            <div class="case-title">Caso 001 — Luz sobre el lago</div>
+            <div class="case-data">
+              <span>Fecha: 12/03/2023</span>
+              <span>Ubicación: Lago San Martín</span>
+              <span class="status open">Estado: Investigación Abierta</span>
+            </div>
+          </div>
+        </article>
+        <!-- tarjeta 2 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <img loading="lazy" class="thumb" src="triangulo.jpg" alt="Caso 002 - Objeto triangular">
+          </div>
+          <div class="meta">
+            <div class="case-title">Caso 002 — Objeto Triangular</div>
+            <div class="case-data">
+              <span>Fecha: 02/11/2023</span>
+              <span>Ubicación: Cordillera Central</span>
+              <span class="status closed">Estado: Investigación Cerrada</span>
+            </div>
+          </div>
+        </article>
+        <!-- tarjeta 3 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <img loading="lazy" class="thumb" src="noche2.jpg" alt="Caso 003 - Resplandor nocturno">
+          </div>
+          <div class="meta">
+            <div class="case-title">Caso 003 — Resplandor Nocturno</div>
+            <div class="case-data">
+              <span>Fecha: 15/01/2024</span>
+              <span>Ubicación: Puerto Libertad</span>
+              <span class="status open">Estado: Investigación Abierta</span>
+            </div>
+          </div>
+        </article>
+        <!-- tarjeta 4 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <img loading="lazy" class="thumb" src="estela.jpg" alt="Caso 004 - Estela luminosa">
+          </div>
+          <div class="meta">
+            <div class="case-title">Caso 004 — Estela Luminosa</div>
+            <div class="case-data">
+              <span>Fecha: 08/06/2024</span>
+              <span>Ubicación: Costa Atlántica</span>
+              <span class="status closed">Estado: Investigación Cerrada</span>
+            </div>
+          </div>
+        </article>
+        <!-- tarjeta 5 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <img loading="lazy" class="thumb" src="triangulo2.jpg" alt="Caso 005 - Formación en V">
+          </div>
+          <div class="meta">
+            <div class="case-title">Caso 005 — Formación en V</div>
+            <div class="case-data">
+              <span>Fecha: 21/07/2023</span>
+              <span>Ubicación: Valle de las Sombras</span>
+              <span class="status open">Estado: Investigación Abierta</span>
+            </div>
+          </div>
+        </article>
+        <!-- tarjeta 6 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <img loading="lazy" class="thumb" src="orbe.jpg" alt="Caso 006 - Orbe brillante">
+          </div>
+          <div class="meta">
+            <div class="case-title">Caso 006 — Orbe Brillante</div>
+            <div class="case-data">
+              <span>Fecha: 09/10/2024</span>
+              <span>Ubicación: Estación Norte</span>
+              <span class="status open">Estado: Investigación Abierta</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="declassified">
+        <h3>Imágenes recientemente desclasificadas</h3>
+        <p class="dataplate">Sección actualizada: 02/06/2026 — Acceso restringido según protocolo</p>
+        <div style="margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          <div style="background:var(--glass);padding:8px;border-radius:6px;border:1px solid var(--glass-2-border)">
+            <img loading="lazy" src="expediente1.jpg" style="width:100%;height:110px;object-fit:cover;border-radius:6px;margin-bottom:8px" alt="Desclasificado 1">
+            <div style="font-weight:700;color:#e8fbff">Expediente D-21</div>
+            <div style="font-size:12px;color:var(--muted)">Fecha: 11/05/2026 — Ubicación: Mar Austral</div>
+          </div>
+          <div style="background:var(--glass);padding:8px;border-radius:6px;border:1px solid var(--glass-2-border)">
+            <img loading="lazy" src="expediente2.jpg" style="width:100%;height:110px;object-fit:cover;border-radius:6px;margin-bottom:8px" alt="Desclasificado 2">
+            <div style="font-weight:700;color:#e8fbff">Expediente D-34</div>
+            <div style="font-size:12px;color:var(--muted)">Fecha: 29/04/2026 — Ubicación: Cordillera Oeste</div>
+          </div>
+          <div style="background:var(--glass);padding:8px;border-radius:6px;border:1px solid var(--glass-2-border)">
+            <img loading="lazy" src="expediente3.jpg" style="width:100%;height:110px;object-fit:cover;border-radius:6px;margin-bottom:8px" alt="Desclasificado 3">
+            <div style="font-weight:700;color:#e8fbff">Expediente D-47</div>
+            <div style="font-size:12px;color:var(--muted)">Fecha: 16/03/2026 — Ubicación: Plataforma 9</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
